@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Logo from '../../images/logo/photography-logo-1.jpg'
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+    }
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -17,6 +25,9 @@ const Header = () => {
                                 Login
                             </Link>
                         </li>
+                        <li>
+                            <button>Logout</button>
+                        </li>
                         <li><Link to='/blogs'>Blogs</Link></li>
                     </ul>
                 </div>
@@ -25,11 +36,21 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to='/'>Home</Link></li>
-                    <li tabIndex={0}>
-                        <Link to='/login'>
-                            Login
-                        </Link>
-                    </li>
+                    {
+                        user?.uid ?
+                            <li>
+                                <button onClick={handleLogOut}>Logout</button>
+                            </li>
+
+                            :
+                            <li tabIndex={0}>
+                                <Link to='/login'>
+                                    Login
+                                </Link>
+                            </li>
+                    }
+
+
                     <li><Link to='/blogs'>Blogs</Link></li>
                 </ul>
             </div>
