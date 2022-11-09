@@ -1,10 +1,12 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
 
-    const {login} = useContext(AuthContext);
+    const {login, googleLogin} = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -19,6 +21,15 @@ const Login = () => {
             form.reset();
         })
         .catch(error => console.error(error))
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin(googleProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(err => console.error(err))
     }
 
     return (
@@ -45,7 +56,11 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <input className="btn" type="submit" value='Login' />
                         </div>
+
                     </form>
+                    <p className='text-center mb-2'>---Or login with---</p>
+                    <button className='btn' onClick={handleGoogleLogin}>Google</button>
+                    <br />
                     <p className='text-center mb-5'>Do not have account? <Link className='underline text-blue-700' to='/register'>Create new</Link></p>
                 </div>
             </div>
