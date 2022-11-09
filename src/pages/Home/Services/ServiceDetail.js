@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import AllReviews from '../../Reviews/AllReviews';
 
 const ServiceDetail = () => {
 
     const serviceDetail = useLoaderData();
-    const { user, _id, title, price } = useContext(AuthContext);
+    const { user, _id, title } = useContext(AuthContext);
 
     // const { title, img, description, _id } = service;
 
@@ -20,7 +21,7 @@ const ServiceDetail = () => {
 
         const reviewer = {
             service: _id,
-            serviceName: title,
+            title,
             reviewer: name,
             email: email,
             imgUrl: imgUrl,
@@ -55,16 +56,11 @@ const ServiceDetail = () => {
                     <h2 className="card-title">{serviceDetail?.title}</h2>
                     <p>{serviceDetail?.description}</p>
                     <p className='text-2xl font-bold'>Price: $ <span className='text-yellow-400'>{serviceDetail?.price}</span></p>
-                    {/* {
-                    serviceDetail?.description.length > 100 ?
-                        <p>{serviceDetail?.description.slice(0, 100) + '...'} <Link className='underline text-blue-500' to={`/services/${serviceDetail?._id}`}>Learn More</Link></p>
-                        :
-                        <p>{serviceDetail?.description}</p>
-                } */}
-                    {/* <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Listen</button>
-                </div> */}
+                    
                 </div>
+            </div>
+            <div>
+                <AllReviews></AllReviews>
             </div>
             <div className='mb-10'>
                 <h1 className='text-center mb-10'>Please deliver your review here</h1>

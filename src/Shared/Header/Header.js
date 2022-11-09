@@ -38,9 +38,15 @@ const Header = () => {
                     <li><Link to='/'>Home</Link></li>
                     {
                         user?.uid ?
-                            <li>
-                                <button onClick={handleLogOut}>Logout</button>
-                            </li>
+                            <>
+                                <li>
+                                    <button onClick={handleLogOut}>Logout</button>
+                                </li>
+                                <li>
+                                    <Link to='/myReviews'>My Reviews</Link>
+                                </li>
+                            </>
+
 
                             :
                             <li tabIndex={0}>
