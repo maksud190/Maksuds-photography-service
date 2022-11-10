@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import ReviewsRowTable from './ReviewsRowTable';
@@ -46,13 +47,29 @@ const MyReviews = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {
+                    {review?.length > 0?
+                        <>
+                        {
                         review?.map(rw => <ReviewsRowTable
                             key={rw._id}
                             rw={rw}
                             handleDelete={handleDelete}
                         ></ReviewsRowTable>)
                     }
+                        </>
+                        :
+                        <>
+                        <p className='text-2xl text-center'>No Reviews were added from you. Please add some <Link className='underline text-blue-600' to='/allServices'>Reviews and Feedback</Link></p>
+                        </>
+
+                    }
+                    {/* {
+                        review?.map(rw => <ReviewsRowTable
+                            key={rw._id}
+                            rw={rw}
+                            handleDelete={handleDelete}
+                        ></ReviewsRowTable>)
+                    } */}
                 </tbody>
             </table>
         </div>
