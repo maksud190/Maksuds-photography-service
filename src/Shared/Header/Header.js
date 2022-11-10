@@ -42,9 +42,6 @@ const Header = () => {
                                 <li>
                                     <button onClick={handleLogOut}>Logout</button>
                                 </li>
-                                <li>
-                                    <Link to='/myReviews'>My Reviews</Link>
-                                </li>
                             </>
 
 
@@ -57,6 +54,7 @@ const Header = () => {
                     }
 
 
+                    <li><Link to='/myReviews'>My Reviews</Link></li>
                     <li><Link to='/blogs'>Blogs</Link></li>
                 </ul>
             </div>
