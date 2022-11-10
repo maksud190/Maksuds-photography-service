@@ -1,6 +1,7 @@
+import { updateProfile } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { auth, AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Registration = () => {
 
@@ -19,6 +20,17 @@ const Registration = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            updateUserName(name);
+        })
+        .catch(error => console.error(error))
+    }
+
+    const updateUserName = (name) => {
+        updateProfile(auth.currentUser, {
+            displayName: name
+        })
+        .then(()=> {
+            console.log('displayName Updated');
         })
         .catch(error => console.error(error))
     }
@@ -33,19 +45,19 @@ const Registration = () => {
                             <label className="label">
                                 <span className="label-text">Your Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="name" className="input input-bordered" />
+                            <input type="text" name='name' placeholder="name" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                             <label className="label">
                                 <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>

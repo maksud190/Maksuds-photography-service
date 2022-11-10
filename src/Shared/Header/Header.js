@@ -40,17 +40,11 @@ const Header = () => {
                         user?.uid ?
                             <>
                                 <li>
-                                    <button onClick={handleLogOut}>Logout</button>
+                                    <Link to='/addService'>Add Service</Link>
                                 </li>
                             </>
-
-
                             :
-                            <li tabIndex={0}>
-                                <Link to='/login'>
-                                    Login
-                                </Link>
-                            </li>
+                            <></>
                     }
 
 
@@ -59,7 +53,21 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <p>{user?.displayName}</p>
+                {user?.uid ?
+                    <>
+                        <p>{user.displayName}</p>
+
+                        <button className='btn btn-ghost ml-2' onClick={handleLogOut}>Logout</button>
+
+                    </>
+                    :
+                    <>
+                        <p>UserName</p>
+                        <Link className='btn btn-info ml-2' to='/login'>
+                            Login
+                        </Link>
+                    </>
+                }
             </div>
         </div>
     );

@@ -50,26 +50,26 @@ const AddService = () => {
 return (
 
     <div>
-        <h1 className='text-center mb-10'>Please deliver your review here</h1>
+        <h1 className='text-center mb-10'>To add any service, fill up the form please</h1>
 
         <form onSubmit={handleAddService} className='form-control'>
             <div className='grid justify-items-center'>
                 <label className="label">
                     <span className="label-text">Title of your Service</span>
                 </label>
-                <input type="text" name='title' placeholder="Title" className="input input-bordered input-accent w-full max-w-3xl" />
+                <input type="text" name='title' placeholder="Title" className="input input-bordered input-accent w-full max-w-3xl" required />
                 <label className="label">
                     <span className="label-text">Image URL</span>
                 </label>
-                <input type="text" name='imgUrl' placeholder="Image URL" className="input input-bordered input-accent w-full max-w-3xl" />
+                <input type="text" name='imgUrl' placeholder="Image URL" className="input input-bordered input-accent w-full max-w-3xl" required />
                 <label className="label">
                     <span className="label-text">Description</span>
                 </label>
-                <input type="text" name='description' placeholder="description" className="input input-bordered input-accent w-full max-w-3xl" />
+                <input type="text" name='description' placeholder="description" className="input input-bordered input-accent w-full max-w-3xl" required />
                 <label className="label">
                     <span className="label-text">Price</span>
                 </label>
-                <input type="text" name='price' placeholder="price" className="input input-bordered input-accent w-full max-w-3xl" />
+                <input type="text" name='price' placeholder="price" className="input input-bordered input-accent w-full max-w-3xl" required />
             </div>
             <button className='btn btn-outline mt-10 max-w-3xl m-auto' type='submit'>Submit my review</button>
         </form>
