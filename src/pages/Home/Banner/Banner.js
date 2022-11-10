@@ -12,7 +12,7 @@ const Banner = () => {
                     <img src={Image1} alt='' className="w-full" />
                 </div>
                 <div className="absolute flex transform -translate-y-1/2 left-1/3 right-1/3 top-1/2">
-                    <h1 className='text-gray-200 text-4xl font-bold'>Welcome to Maksud's Photography</h1>
+                    <h1 className='text-gray-200 text-4xl font-bold opacity-80'>Welcome to Maksud's Photography</h1>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide3" className="btn btn-circle">❮</a>
@@ -24,7 +24,7 @@ const Banner = () => {
                     <img src={Image2} alt='' className="w-full" />
                 </div>
                 <div className="absolute flex transform -translate-y-1/2 left-1/3 right-1/3 top-1/2">
-                    <h1 className='text-gray-200 text-4xl font-bold'>Welcome to Maksud's Photography</h1>
+                    <h1 className='text-gray-200 text-4xl font-bold opacity-80'>Welcome to Maksud's Photography</h1>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide1" className="btn btn-circle">❮</a>
@@ -36,7 +36,7 @@ const Banner = () => {
                     <img src={Image3} alt='' className="w-full" />
                 </div>
                 <div className="absolute flex transform -translate-y-1/2 left-1/3 right-1/3 top-1/2">
-                    <h1 className='text-gray-200 text-4xl font-bold'>Welcome to Maksud's Photography</h1>
+                    <h1 className='text-gray-200 text-4xl font-bold opacity-80'>Welcome to Maksud's Photography</h1>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide2" className="btn btn-circle">❮</a>
