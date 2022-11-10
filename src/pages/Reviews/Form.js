@@ -29,7 +29,7 @@ const Form = () => {
             review: review
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://y-orcin-five.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

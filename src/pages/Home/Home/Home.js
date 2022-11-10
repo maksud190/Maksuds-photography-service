@@ -7,10 +7,10 @@ import Services from '../Services/Services';
 
 const Home = () => {
 
-    const { loader } = useContext(AuthContext);
+    const { loading } = useContext(AuthContext);
 
-    if (loader) {
-        return <button className="btn loading m-auto">loading...</button>;
+    if(loading){
+        return <div className='text-center my-16'><button className="btn loading">loading</button></div>;
     }
 
     return (
