@@ -2,10 +2,12 @@ import { updateProfile } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { auth, AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Registration = () => {
 
     const {createUser} = useContext(AuthContext);
+    useTitle('Register')
 
     const handleRegister = (event)=>{
         event.preventDefault();
@@ -14,6 +16,7 @@ const Registration = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        
 
         createUser(email, password)
         .then(result => {

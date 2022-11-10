@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
 const AllServices = () => {
 
     const {loading} = useContext(AuthContext);
     const [allServices, setAllServices] = useState();
+    useTitle('All services');
+
     useEffect(() => {
         fetch('https://y-orcin-five.vercel.app/allServices')
             .then(res => res.json())

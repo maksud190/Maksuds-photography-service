@@ -20,14 +20,34 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/'>Home</Link></li>
-                        <li tabIndex={0}>
-                            <Link to='/login'>
-                                Login
-                            </Link>
-                        </li>
-                        <li>
-                            <button>Logout</button>
-                        </li>
+                        {user?.uid ?
+                            <>
+                                <li>
+                                    <button>Logout</button>
+                                </li>
+                                <li>
+                                    <Link to='/addService'>Add Service</Link>
+                                </li>
+                                <li>
+                                    <button className='' onClick={handleLogOut}>Logout</button>
+                                </li>
+                                <li>
+                                    <p>UserName: {user.displayName}</p>
+                                </li>
+                            </>
+
+                            :
+
+                            <>
+                                <li tabIndex={0}>
+                                    <Link to='/login'>
+                                        Login
+                                    </Link>
+                                </li>
+                            </>
+                        }
+
+
                         <li><Link to='/blogs'>Blogs</Link></li>
                     </ul>
                 </div>
@@ -52,7 +72,7 @@ const Header = () => {
                     <li><Link to='/blogs'>Blogs</Link></li>
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end hidden lg:flex">
                 {user?.uid ?
                     <>
                         <p>{user.displayName}</p>
