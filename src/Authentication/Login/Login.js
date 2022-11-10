@@ -5,11 +5,15 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
 
-    const {login, googleLogin} = useContext(AuthContext);
+    const {login, googleLogin, loading} = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
+
+    if(loading){
+        return <div className='text-center my-16'><button className="btn loading">loading</button></div>;
+    }
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -17,6 +21,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        
         login(email, password)
         .then(result=> {
             const user = result.user;

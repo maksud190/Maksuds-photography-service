@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
 
+    const { loading } = useContext(AuthContext);
     const [services, setServices] = useState();
     useEffect(() => {
         fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
+
+
+    if(loading){
+        return <div className='text-center my-16'><button className="btn loading">loading</button></div>;
+    }
 
     return (
         <div className='mt-24'>

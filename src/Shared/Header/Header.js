@@ -59,7 +59,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                <p>{user?.displayName}</p>
             </div>
         </div>
     );

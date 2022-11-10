@@ -27,7 +27,7 @@ const ReviewsRowTable = ({ rw, handleDelete }) => {
                 </div>
             </td>
             <td>
-                Zemlak, Daniel and Leannon
+                Photography
             </td>
             <th>
                 {review}

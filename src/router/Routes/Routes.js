@@ -4,6 +4,7 @@ import Registration from "../../Authentication/Registration/Registration";
 import Mains from "../../Layout/Mains";
 import Blogs from "../../pages/Blogs/Blogs";
 import Home from "../../pages/Home/Home/Home";
+import AddService from "../../pages/Home/Services/AddService";
 import AllServices from "../../pages/Home/Services/AllServices";
 import ServiceDetail from "../../pages/Home/Services/ServiceDetail";
 import Services from "../../pages/Home/Services/Services";
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: '/allServices',
                 element: <AllServices></AllServices>
+            },
+            {
+                path: '/addService',
+                element: <AddService></AddService>
             }
 
         ]
