@@ -75,7 +75,7 @@ const Header = () => {
             <div className="navbar-end hidden lg:flex">
                 {user?.uid ?
                     <>
-                        <p>{user.displayName}</p>
+                        <p className='font-bold'>{user.displayName}</p>
 
                         <button className='btn btn-ghost ml-2' onClick={handleLogOut}>Logout</button>
 

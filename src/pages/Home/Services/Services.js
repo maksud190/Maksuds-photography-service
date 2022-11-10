@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import useTitle from '../../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
 
     const { loading } = useContext(AuthContext);
     const [services, setServices] = useState();
-    useTitle('Services');
 
     useEffect(() => {
         fetch('https://y-orcin-five.vercel.app/services')

@@ -55,8 +55,12 @@ const router = createBrowserRouter([
                 path: '/addService',
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
             }
-
         ]
+        
+    },
+    {
+        path: '*',
+        element: <div className="text-center my-72 bg-slate-400 p-10 rounded-2xl"><h1 className="text-red-600 text-7xl font-mono">Sorry!!! <br /> Page not found! You are in a wrong URL. <br /></h1></div>
     }
 ]);
 
