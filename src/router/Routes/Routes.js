@@ -4,6 +4,7 @@ import Registration from "../../Authentication/Registration/Registration";
 import Mains from "../../Layout/Mains";
 import Blogs from "../../pages/Blogs/Blogs";
 import Home from "../../pages/Home/Home/Home";
+import AllServices from "../../pages/Home/Services/AllServices";
 import ServiceDetail from "../../pages/Home/Services/ServiceDetail";
 import Services from "../../pages/Home/Services/Services";
 import AllReviews from "../../pages/Reviews/AllReviews";
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
                 path: '/myReviews',
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
+            {
+                path: '/allServices',
+                element: <AllServices></AllServices>
+            }
 
         ]
     }

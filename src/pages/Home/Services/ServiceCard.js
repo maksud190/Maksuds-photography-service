@@ -16,9 +16,6 @@ const ServiceCard = ({ service }) => {
                         :
                         <p>{description}</p>
                 }
-                {/* <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Listen</button>
-                </div> */}
             </div>
         </div>
     );
