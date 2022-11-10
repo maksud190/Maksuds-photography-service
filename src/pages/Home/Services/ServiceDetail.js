@@ -24,12 +24,13 @@ const ServiceDetail = () => {
                     
                 </div>
             </div>
-            <div>
-                <AllReviews></AllReviews>
-            </div>
             <div className='mb-10'>
                 <Form></Form>
             </div>
+            <div>
+                <AllReviews></AllReviews>
+            </div>
+            
         </div>
     );
 };

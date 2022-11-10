@@ -52,7 +52,7 @@ const Form = () => {
 
     return (
         <div>
-            <h1 className='text-center mb-10'>Please deliver your review here</h1>
+            <h1 className='text-center mb-10 text-xl'>Please deliver your review here</h1>
             {
                 user?.uid ?
                     <form onSubmit={handleReview} className='form-control'>
@@ -80,7 +80,7 @@ const Form = () => {
                     :
 
                     <div className='text-center '>
-                        <p className='mb-5'>Please Login and Review</p>
+                        <p className='mb-5 text-xl'>Please Login and Review</p>
                         <Link to='/login'><button className='btn mb-10'>Login</button></Link>
                     </div>
             }

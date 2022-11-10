@@ -23,7 +23,6 @@ const AddService = () => {
             img,
             description,
             price
-
         }
 
         fetch('http://localhost:5000/services', {
@@ -50,7 +49,7 @@ const AddService = () => {
 return (
 
     <div>
-        <h1 className='text-center mb-10'>To add any service, fill up the form please</h1>
+        <h1 className='text-center text-2xl font-bold my-10'>To add any service, fill up the form please</h1>
 
         <form onSubmit={handleAddService} className='form-control'>
             <div className='grid justify-items-center'>
@@ -71,7 +70,7 @@ return (
                 </label>
                 <input type="text" name='price' placeholder="price" className="input input-bordered input-accent w-full max-w-3xl" required />
             </div>
-            <button className='btn btn-outline mt-10 max-w-3xl m-auto' type='submit'>Submit my review</button>
+            <button className='btn btn-outline my-10 max-w-3xl m-auto' type='submit'>Submit my review</button>
         </form>
 
     </div>

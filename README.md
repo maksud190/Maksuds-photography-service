@@ -11,5 +11,6 @@ Link of my site:
 - React Router
 - Context API
 - Firebase for authentication
+- Used MongoDB for Database
 - Firebase to deploy the client Site
 - Vercel to deploy the server site
